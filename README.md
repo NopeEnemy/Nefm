@@ -19,8 +19,9 @@ cargo run --release -- tokenizer ./artifacts 32000
 ```bash
 cargo run --release -- train ./artifacts 10 6 8 256 1024 512 32 4 42 0.0001 0.00001 ./artifacts/tokenizer.json
 ```
-
 (Arguments: dir, epochs, layers, heads, d_model, d_hidden, context, batch, workers, seed, lr, min_lr, tokenizer_path)
+
+
 3. Model Inference (Text Generation)
 ```bash
 cargo run --release -- run ./artifacts 0.7 50 "Hello, I am a language model"
