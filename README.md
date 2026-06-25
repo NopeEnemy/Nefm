@@ -10,24 +10,42 @@ An experimental Large Language Model (LLM) with KV-cache support, written in Rus
 
 ## Getting Started
 
-### 1. Train the Tokenizer
+### Installation
+Go to [releases](github.com/NopeEnemy/Nefm/releases) and install the latest version or compile sources.
+
+Instruction if you want compile sources:
+1. Install [Rust](https://rust-lang.org/tools/install/), if you haven't.
+2. Get the sources
 ```bash
-cargo run --release -- tokenizer ./artifacts 32000
+git clone https://github.com/NopeEnemy/Nefm
+cd Nefm
+```
+3. Build (this may take some minutes)
+```
+cargo build --release
+```
+4. Pick up the binary from .../Nefm/target/release
+
+### Using
+
+1. Train the Tokenizer
+```bash
+nefm tokenizer ./artifacts 32000
 ```
 
 2. Train the Model
 ```bash
-cargo run --release -- train ./artifacts 10 6 8 256 1024 512 32 4 42 0.0001 0.00001 ./artifacts/tokenizer.json
+nefm train ./artifacts 10 6 8 256 1024 512 32 4 42 0.0001 0.00001 ./artifacts/tokenizer.json
 ```
 (Arguments: dir, epochs, layers, heads, d_model, d_hidden, context, batch, workers, seed, lr, min_lr, tokenizer_path)
 
 
 3. Model Inference (Text Generation)
 ```bash
-cargo run --release -- run ./artifacts 0.7 50 "Hello, I am a language model"
+nefm run ./artifacts 0.7 50 "Hello, I am a language model"
 ```
 
 4. View Model Parameters
 ```bash
-cargo run --release -- params ./artifacts
+nefm params ./artifacts
 ```
