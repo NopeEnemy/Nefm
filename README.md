@@ -11,7 +11,7 @@ An experimental Large Language Model (LLM) with KV-cache support, written in Rus
 ## Getting Started
 
 ### Installation
-Go to [releases](github.com/NopeEnemy/Nefm/releases) and install the latest version or compile sources.
+Go to [releases](https://github.com/NopeEnemy/Nefm/releases) and install the latest version or compile sources.
 
 Instruction if you want compile sources:
 1. Install [Rust](https://rust-lang.org/tools/install/), if you haven't.
